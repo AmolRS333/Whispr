@@ -1,12 +1,102 @@
-# React + Vite
+# MERN Chat App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-stack real-time chat application built with the MERN stack (MongoDB, Express, React, Node.js). Features authentication, user profiles, and messaging with image support.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- User authentication (signup, login, logout)
+- Profile management with avatar upload
+- Real-time messaging (Socket.io ready)
+- Responsive UI with React, Tailwind CSS, and DaisyUI
+- RESTful API backend with Express and MongoDB
 
-## Expanding the ESLint configuration
+## Project Structure
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```
+.
+├── backend/
+│   ├── src/
+│   │   ├── controllers/
+│   │   ├── lib/
+│   │   ├── middleware/
+│   │   ├── models/
+│   │   ├── routes/
+│   │   └── index.js
+│   ├── .env
+│   └── package.json
+├── frontend/
+│   ├── public/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── lib/
+│   │   ├── pages/
+│   │   ├── store/
+│   │   ├── App.jsx
+│   │   └── main.jsx
+│   ├── index.html
+│   └── package.json
+└── README.md
+```
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v18+ recommended)
+- MongoDB
+
+### Backend Setup
+
+1. Install dependencies:
+   ```sh
+   cd backend
+   npm install
+   ```
+2. Create a `.env` file in `backend/` (see `.env` example in the repo).
+3. Start the backend server:
+   ```sh
+   npm run dev
+   ```
+
+### Frontend Setup
+
+1. Install dependencies:
+   ```sh
+   cd frontend
+   npm install
+   ```
+2. Start the frontend dev server:
+   ```sh
+   npm run dev
+   ```
+3. Visit [http://localhost:5173](http://localhost:5173) in your browser.
+
+## Environment Variables
+
+See `backend/.env` for required variables:
+
+- `MONGO_URI`
+- `PORT`
+- `JWT_SECRET`
+- `NODE_ENV`
+- `CLOUD_NAME`, `CLOUD_API_KEY`, `CLOUD_API_SECRET` (for Cloudinary image uploads)
+
+## Scripts
+
+### Backend
+
+- `npm run dev` — Start backend with nodemon
+
+### Frontend
+
+- `npm run dev` — Start frontend dev server
+- `npm run build` — Build frontend for production
+- `npm run lint` — Lint frontend code
+
+## License
+
+MIT
+
+---
+
+Built with ❤️ using the MERN stack.
