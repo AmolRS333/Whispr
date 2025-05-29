@@ -9,10 +9,11 @@ import ProfilePage from "./pages/ProfilePage";
 import { useAuthStore } from "./store/useAuthStore";
 import { LoaderPinwheel } from "lucide-react";
 import { Toaster } from "react-hot-toast";
+import { useThemeStore } from "./store/useThemeStore";
 
 export default function App() {
   const { authUser, checkAuth, isCheckingAuth } = useAuthStore();
-
+  const { theme } = useThemeStore();
   useEffect(() => {
     checkAuth();
   }, [checkAuth]);
@@ -26,7 +27,7 @@ export default function App() {
     );
 
   return (
-    <div className="">
+    <div data-theme= {theme}>
       <Navbar />
       <Routes>
         <Route
