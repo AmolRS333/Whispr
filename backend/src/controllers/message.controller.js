@@ -54,8 +54,10 @@ export const sendMessage = async (req, res) => {
     await newMessage.save();
 //todo : reltime functionLITY GOES HERE => socket.io
     res.status(200).json({
-      message: "Message sent successfully",
-      data: newMessage,
+      data: {
+        message: "Message sent successfully",
+        messageData: newMessage,
+      }
     });
   } catch (error) {
     console.log("Error in sendMessage", error.message);
